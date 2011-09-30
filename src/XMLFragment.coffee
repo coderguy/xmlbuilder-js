@@ -58,6 +58,9 @@ class XMLFragment
     if not value?
       throw new Error "Missing element text"
 
+    if text == ''
+      return @;
+
     value = '' + value or ''
     value = @escape value
     @assertLegalChar value
